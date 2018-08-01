@@ -66,6 +66,14 @@ describe('Cinema', function () {
     assert.strictEqual(result, 622);
   });
 
+  it("should be able to filter films by year/genre", function () {
+    const list = cinema.filmsByProperty("year", 2017);
+    const list2 = cinema.filmsByProperty("genre", "drama");
+    const result = list.length;
+    const result2 = list2.length;
+    assert.deepStrictEqual(result, 3);
+    assert.deepStrictEqual(result2, 2);
+  })
 });
 
 module.exports = Cinema;

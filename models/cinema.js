@@ -44,5 +44,9 @@ Cinema.prototype.totalRunTime = function () {
     return total + film.length;
   },0);
   return result;
+};
 
+Cinema.prototype.filmsByProperty = function (property, value) {
+  const result = this.films.filter(film => film[property] === value);
+  return result;
 };
