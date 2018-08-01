@@ -19,3 +19,21 @@ Cinema.prototype.filmsByGenre = function (genre) {
   const result = this.films.filter(film => film.genre === genre);
   return result;
 };
+
+Cinema.prototype.filmsByYear = function (year) {
+  const result = this.films.filter(film => film.year === year);
+  return result;
+
+};
+
+Cinema.prototype.filmExistForYear = function (year) {
+  const result = this.films.find(film => film.year === year);
+  return !!result;
+
+};
+
+Cinema.prototype.allFilmsOver = function (time) {
+  const result = this.films.filter(film => film.length > time );
+  return (result.length === this.films.length);
+
+};

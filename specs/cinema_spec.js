@@ -42,9 +42,25 @@ describe('Cinema', function () {
       const result = list.length;
       assert.deepStrictEqual(result, 2);
   });
-  it('should be able to check whether there are some films from a particular year');
-  it('should be able to check whether there are no films from a particular year');
-  it('should be able to check whether all films are over a particular length');
+  it('should be able to check whether there are some films from a particular year', function(){
+    const list = cinema.filmsByYear(2017);
+    const result = list.length;
+    assert.strictEqual(result, 3);
+
+  });
+
+  it('should be able to check whether there are no films from a particular year', function(){
+    const result = cinema.filmExistForYear(2020);
+    assert.strictEqual(result, false);
+  });
+
+  it('should be able to check whether all films are over a particular length', function(){
+    const result = cinema.allFilmsOver(100);
+    const result2 = cinema.allFilmsOver(90);
+    assert.strictEqual(result, false);
+    assert.strictEqual(result2, true);
+  });
+
   it('should be able to calculate total running time of all films');
 
 });
