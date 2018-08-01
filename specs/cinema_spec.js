@@ -29,7 +29,7 @@ describe('Cinema', function () {
   });
 
   it('should be able to get a list of film titles', function () {
-    const result = cinema.getAllTitles;
+    const result = cinema.getAllTitles();
     assert.strictEqual(result[0], 'Moonlight');
   });
   it('should be able to find a film by title');
